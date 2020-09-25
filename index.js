@@ -35,16 +35,18 @@ class Transaction {
     if (newBalanceIsValid) {
       this.account.addTransaction(this);
       return 'Transaction successful';
-    } else { return 'Withdrawal failed due to low funds'; }
+    } else {
+      return 'Withdrawal failed due to low funds';
+    }
   }
 }
 
-class Withdrawal extends Transaction{
+class Withdrawal extends Transaction {
   value() {
     return -this.amount;
   }
 }
-class Deposit extends Transaction{
+class Deposit extends Transaction {
   value() {
     return this.amount;
   }
